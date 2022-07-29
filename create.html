@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../finalproject/public/stylesheets/create.css">
+    <script src="../finalproject/public/javascripts/createmenutab.js"></script>
+    <script src="../finalproject/public/javascripts/previewimage.js"></script>    
+    <title>Create</title>
+</head>
+<body>
+    <div class="bg-create">
+        <h2>Create your new story!</h2>
+        <p style="padding-left: 10px;">Click on the  START button on the tabbed menu to start creating:</p>
+    <div class="tab">
+    <button class="tablinks" onclick="tabNav(event, 'start')">START</button>
+    <button class="tablinks" onclick="tabNav(event, 'add')">ADD</button>
+    <button class="tablinks" onclick="tabNav(event, 'publish')">PUBLISH</button>
+    </div>
+
+    <div id="start" class="tabcontent">
+    <h3>Start your story</h3>
+    <p>Pick from the options below to build your story template.</p>
+        <div class="genre-select">
+            <h3>Select your genre:</h3>
+            <form class="genre-grid" action="create" method="post">
+                <div class="genre-div">
+                    <img class="genre-img" src="../finalproject/public/images/horror.png" alt="horror">
+                    <input type="radio" name="genre" id="genre" value="horror">
+                    <label for="horror">Horror</label>
+                </div>
+                <div class="genre-div">                    
+                    <img class="genre-img" src="../finalproject/public/images/romance.png" alt="romance">
+                    <input type="radio" name="genre" id="genre" value="romance">
+                    <label for="romance">Romance</label>
+                </div>
+                <div class="genre-div">
+                    <img class="genre-img" src="../finalproject/public/images/mystery.png" alt="mystery">
+                    <input type="radio" name="genre" id="genre" value="mystery">
+                    <label for="mystery">Mystery</label>                    
+                </div>
+                <div class="genre-div">
+                    <img class="genre-img" src="../finalproject/public/images/action.png" alt="action">
+                    <input type="radio" name="genre" id="genre" value="action">
+                    <label for="action">Action</label>                    
+                </div>
+                <div class="genre-div">
+                    <img class="genre-img" src="../finalproject/public/images/fantasy.png" alt="fantasy">
+                    <input type="radio" name="genre" id="genre" value="fantasy">
+                    <label for="fantasy">Fantasy</label>                    
+                </div>
+            </form>
+        </div>
+        <div class="page-select">
+            <h3>Select the desired number of pages:</h3>
+            <form class="page-grid" action="create" method="post">
+                <div class="page-div">
+                    <input type="radio" name="content" id="content" value="5">
+                    <label for="5">5</label>
+                </div>
+                <div class="page-div">
+                    <input type="radio" name="content" id="content" value="10">
+                    <label for="10">10</label>
+                </div>
+                <div class="page-div">
+                    <input type="radio" name="content" id="content" value="15">
+                    <label for="15">15</label>
+                </div>
+                <div class="page-div">
+                    <input type="radio" name="content" id="content" value="20">
+                    <label for="20">20</label>
+                </div>               
+            </form>
+        </div>
+        <div class="layout-select">
+            <h3>Select your layout style:</h3>
+            <form class="layout-grid" action="create" method="post">
+                <div class="layout-div">
+                    <img class="vertical-layout" src="../finalproject/public/images/book-cover.jpg" alt="vertical layout">
+                    <input type="radio" name="layout" id="vertical" value="vertical">
+                    <label for="vertical">Vertical layout</label>
+                </div>
+                <div class="layout-div">
+                    <img class="horizontal-layout" src="../finalproject/public/images/book-cover.jpg" alt="vertical layout">
+                    <input type="radio" name="layout" id="horizontal" value="horizontal">
+                    <label for="horizontal">Horizontal layout</label>
+                </div>               
+            </form>
+        </div>
+        <button type="submit">Next</button>
+    </div>
+
+    <div id="add" class="tabcontent">
+    <h3>Add your content</h3>
+    <p>Upload your images and add text to your story pages.</p>        
+        <input type="file" name="pageImage" id="pageImage">                
+        <div class="image-preview" id="imagePreview">
+            <img src="" alt="coverpage preview" class="image-preview__image">
+            <span class="image-preview__default-text">Cover Preview</span>                    
+        </div>
+        <div class="text-input">
+            <form action="create" method="post">                
+                <input type="text" name="storyText" id="text">
+                <label for="text">Enter the text of your story here. <p style="font-size: 15px;">(max characters 500)</p></label>
+            </form>            
+        </div> 
+    </div>
+
+    <div id="publish" class="tabcontent">
+    <h3>Publish your story</h3>
+    <p>Give your new story a title, cover page, and description to complete the process.</p>
+    <div class="publish-story">
+        <form action="create" method="post">
+            <label for="coverPage">Upload a cover page</label><br>
+            <input type="file" name="publish" id="coverPage">            
+            <br>
+            <label for="titleName">Enter your story title</label><br>
+            <input type="text" name="publish" id="titleName">            
+            <br>
+            <label for="storyDesc">Enter a short description about your story</label><br>
+            <input type="text" name="publish" id="storyDesc">            
+            <br>            
+            <input type="button" value="Save Draft">                        
+            <input type="button" value="Publish">
+        </form>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
